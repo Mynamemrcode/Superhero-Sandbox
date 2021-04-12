@@ -1,7 +1,7 @@
 var canvas = new fabric.Canvas("myCanvas");
 
-playerwax =20;
-playeryard =20;
+playerx =20;
+playery =20;
 
 block_image_width = 30;
 block_image_height = 30;
@@ -101,5 +101,33 @@ function newimage() {
 	{
 		right();
 		console.log("right");
+    }
+    function up() {
+        if(playery>0) {
+        playery = playery - block_image_height;
+        canvas.remove(player_object);
+        player_update();
+        }
+    }
+    function down() {
+        if(player_y<500) {
+        player_y = player_y + block_image_height;
+        canvas.remove(player_object);
+        player_update();
+        }
+    }
+    function left() {
+        if(player_x>0) {
+        player_x = player_x - block_image_width;
+        canvas.remove(player_object);
+        player_update();
+        }
+    }
+    function right() {
+        if(player_x<1000) {
+        player_x = player_x + block_image_width;
+        canvas.remove(player_object);
+        player_update();
+        }
     }
     }
