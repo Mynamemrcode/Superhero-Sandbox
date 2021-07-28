@@ -9,34 +9,34 @@ block_image_height = 30;
 var player_object= "";
 var block_image_object= "";
 
-function playerupdate() {
+function player_update() {
     fabric.Image.fromURL("player.png", function(Img) {
         player_object = Img;
     
         player_object.scaleToWidth(150);
         player_object.scaleToHeight(140);
         player_object.set({
-        top:player_y,
-        left:player_x
+        top:playery,
+        left:playerx
         });
         canvas.add(player_object);
+});
 }
-    )}
 
-function newimage() {
+function newimage(get_image) {
     fabric.Image.fromURL(get_image, function(Img) {
-        player_object = Img;
+        block_image_object = Img;
     
         block_image_object.scaleToWidth(block_image_width);
         block_image_object.scaleToHeight(block_image_height);
         block_image_object.set({
-        top:player_y,
-        left:player_x
+        top:playery,
+        left:playerx
         });
-        canvas.add(player_object);
+        canvas.add(block_image_object);
 
-}
-    )}
+});
+    }
     window.addEventListener("keydown", your_keydown);
 
     function your_keydown(e)
@@ -59,27 +59,27 @@ function newimage() {
     }
     if(keyPressed == '70')
 	{
-		newimage(thor_face.png);
+		newimage("thor_face.png");
 		console.log("f");
     }
     if(keyPressed == '66')
 	{
-		newimage(ironman_body.png);
+		newimage("ironman_body.png");
 		console.log("b");
     }
     if(keyPressed == '76')
 	{
-		newimage(spiderman_legs.png);
+		newimage("spiderman_legs.png");
 		console.log("i");
     }
     if(keyPressed == '82')
 	{
-		newimage(hulk_right_hand.png);
+		newimage("hulk_right_hand.png");
 		console.log("r");
     }
     if(keyPressed == '72')
 	{
-		newimage(hulk_left_hand.png);
+		newimage("hulk_left_hand.png");
 		console.log("h");
     }
     if(keyPressed == '38')
@@ -110,22 +110,22 @@ function newimage() {
         }
     }
     function down() {
-        if(player_y<500) {
-        player_y = player_y + block_image_height;
+        if(playery<500) {
+        playery = playery + block_image_height;
         canvas.remove(player_object);
         player_update();
         }
     }
     function left() {
-        if(player_x>0) {
-        player_x = player_x - block_image_width;
+        if(playerx>0) {
+        playerx = playerx - block_image_width;
         canvas.remove(player_object);
         player_update();
         }
     }
     function right() {
-        if(player_x<1000) {
-        player_x = player_x + block_image_width;
+        if(playerx<1000) {
+        playerx = playerx + block_image_width;
         canvas.remove(player_object);
         player_update();
         }
