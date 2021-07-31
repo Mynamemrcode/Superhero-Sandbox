@@ -1,4 +1,4 @@
-var canvas = new fabric.Canvas("myCanvas");
+var canvas = new fabric.Canvas('myCanvas');
 
 playerx =20;
 playery =20;

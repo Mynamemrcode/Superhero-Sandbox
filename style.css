@@ -2,7 +2,7 @@
 background-image:url("ximage2-3-1600x1000.jpg.pagespeed.ic.JE4YKsiokq.jpg");
 }
 
-.myCanvas {
+#myCanvas {
 border-style: groove;
 border-width: 4mm;
 background-color: darksalmon;
